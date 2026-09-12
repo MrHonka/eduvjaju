@@ -4,4 +4,19 @@ hostname kubena
 
 ps> ssh-keygen -t ed25519
 ps> ssh user@192.168.88.140
+ps> scp "C:\Users\user\.ssh\id_ed25519.pub" user@192.168.88.140:/home/user/.ssh/authorized_keys
+
+> sudo apt update && sudo apt install lm-sensors -y
+> sudo chmod -x /etc/update-motd.d/50-motd-news
+
+added to ~/.bashrc
+# === Кастомное приветствие для MrHonka ===
+clear # Очищает экран Cmder от старого мусора, чтобы начать с чистого листа
+echo -e "\e[1;36m====================================================\e[0m"
+echo -e "  Привет, \e[1;32m$USER\e[0m! Добро пожаловать на узел \e[1;33mkubena\e[0m."
+echo -e "  Время входа: \e[1;34m$(date '+%Y-%m-%d %H:%M:%S')\e[0m"
+echo -e "  Твой репозиторий: \e[4;35mhttps://github.com\e[0m"
+echo -e "\e[1;36m====================================================\e[0m"
+echo ""
+
 
