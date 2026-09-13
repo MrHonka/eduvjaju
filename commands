@@ -24,6 +24,9 @@ sudo dpkg --configure -a
 apt list --upgradable
 Получить список пакетов, которые могут быть обновлены.
 
+apt list --installed | grep 'smth'
+Посмотреть список утсанволенных пакетов. Найти нужный
+
 sudo apt update && sudo apt upgrade -y
 Проверить, какие обновления пакетов есть в репе и если успех (&&), установить их.
 
@@ -32,3 +35,12 @@ sudo apt update && sudo apt install lm-sensors -y
 
 sensors
 Вернёт данные датчиков ПК
+
+sudo apt install smartmontools
+Программа получения сведений о диске
+
+sudo smartctl -H /dev/nvme0n1
+Пройти селф-тест
+
+sudo smartctl -a /dev/nvme0n1
+Посмотреть данные об износе
