@@ -46,4 +46,6 @@ tmpfs                              1.6G  8.0K  1.6G   1% /run/user/1000
 
 > sudo apt update && sudo apt install -y samba
 
+created password for samba user
+
 
