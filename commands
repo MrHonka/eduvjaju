@@ -74,3 +74,19 @@ UUID=7A880A58880A12F5 /mnt/win-data ntfs-3g defaults,uid=1000,gid=1000,dmask=007
 * 2 — вторая очередь
 
 
+sudo nano /etc/samba/smb.conf
+вставить в конец файла 
+[win-data]
+   comment = Windows Data Storage
+   path = /mnt/win-data
+   browseable = yes
+   read only = no
+   guest ok = no
+   create mask = 0777
+   directory mask = 0777
+
+
+sudo smbpasswd -a user
+Задать пароль для самба-юзера user
+
+
