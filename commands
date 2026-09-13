@@ -47,3 +47,9 @@ sudo smartctl -H /dev/nvme0n1
 
 sudo smartctl -a /dev/nvme0n1
 Посмотреть данные об износе
+
+sudo lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINTS
+Посмотреть данные о дисках. -o - в красивом виде
+
+sudo ntfsresize --info /dev/sda2
+посмотреть данные об NTFS диске
