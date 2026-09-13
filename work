@@ -19,9 +19,31 @@ echo -e "  Твой репозиторий: \e[4;35mhttps://github.com\e[0m"
 echo -e "\e[1;36m====================================================\e[0m"
 echo ""
 
-sudo mkdir -p /mnt/k8s-storage
-sudo mkdir -p /mnt/win-data
+> sudo mkdir -p /mnt/k8s-storage
+> sudo mkdir -p /mnt/win-data
 
-sudo apt update && sudo apt install -y samba
+added to the end of /etc/fstab
+UUID=0e2248c5-d9d5-45dc-983d-73e1a402e70d /mnt/k8s-storage ext4 defaults 0 2 
+UUID=7A880A58880A12F5 /mnt/win-data ntfs-3g defaults,uid=1000,gid=1000,dmask=007,fmask=117 0 2
+
+> sudo mount -a
+user@kubena:~$ df -h
+Filesystem                         Size  Used Avail Use% Mounted on
+tmpfs                              3.1G  1.4M  3.1G   1% /run
+/dev/mapper/ubuntu--vg-ubuntu--lv  466G  7.2G  435G   2% /
+tmpfs                              7.6G     0  7.6G   0% /dev/shm
+efivarfs                           256K   60K  192K  24% /sys/firmware/efi/efivars
+none                               1.0M     0  1.0M   0% /run/credentials/systemd-journald.service
+tmpfs                              7.6G     0  7.6G   0% /tmp
+none                               1.0M     0  1.0M   0% /run/credentials/systemd-resolved.service
+/dev/nvme0n1p2                     2.0G   97M  1.7G   6% /boot
+/dev/nvme0n1p1                     1.1G  6.4M  1.1G   1% /boot/efi
+none                               1.0M     0  1.0M   0% /run/credentials/systemd-networkd.service
+none                               1.0M     0  1.0M   0% /run/credentials/getty@tty1.service
+tmpfs                              1.6G  8.0K  1.6G   1% /run/user/1000
+/dev/sda3                          250G  2.1M  237G   1% /mnt/k8s-storage
+/dev/sda2                          631G  398G  233G  64% /mnt/win-data
+
+> sudo apt update && sudo apt install -y samba
 
 
