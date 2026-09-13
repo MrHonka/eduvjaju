@@ -19,4 +19,9 @@ echo -e "  Твой репозиторий: \e[4;35mhttps://github.com\e[0m"
 echo -e "\e[1;36m====================================================\e[0m"
 echo ""
 
+sudo mkdir -p /mnt/k8s-storage
+sudo mkdir -p /mnt/win-data
+
+sudo apt update && sudo apt install -y samba
+
 
