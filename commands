@@ -89,4 +89,7 @@ sudo nano /etc/samba/smb.conf
 sudo smbpasswd -a user
 Задать пароль для самба-юзера user
 
+sudo systemctl restart smbd
+Перезапустить службу Самбы
+
 
