@@ -1,5 +1,4 @@
-sudo poweroff
-sudo reboot
+sudo poweroff || sudo reboot
 ip a
 
 home ctrl+K - переместить курсор в нчало строки, вырезать всё справа от курсора в буфер
