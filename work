@@ -51,16 +51,16 @@ created password for samba user
 > sudo apt install -y ca-certificates curl gnupg
 Утилиты для скачивания официальных ключей шифрования
 
-sudo install -m 0755 -d /etc/apt/keyrings
+> sudo install -m 0755 -d /etc/apt/keyrings
 Создать папку (-d) и назначить ей права (-m)
 
-sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+> sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
 Скачать ключи шифрования
 
-sudo chmod a+r /etc/apt/keyrings/docker.asc
+> sudo chmod a+r /etc/apt/keyrings/docker.asc
 Задать права на файл
 
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+> echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
 $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
 sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 Ну, это лютая наркомания. Использовать вывод на экран, который на самом деле текст в кавычках направит в программу tee (оператором направления вывода пайп |),
@@ -69,5 +69,9 @@ sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 https://download.docker.com/linux/ubuntu - а это по какому-то деб-стандарту. .list-файлы должны содержать путь до папки, в которой надётся папка dists, чтобы всякие фзе update
 срабатывали и хоидил по нужным путям до обновлений
 
-sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+> sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 Установить docker
+
+> sudo usermod -aG docker $USER
+Утилита для изменения настроек текущего юзера. -aG - добавить(Append) в группу(G) docker того, кто вернётся из $USER. Юзеры этой группы могут управлять докером.
+Так как Демон Docker (dockerd) работает с наивысшими правами root. Управление им происходит через специальный файл-сокет /var/run/docker.sock
