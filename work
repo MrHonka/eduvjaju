@@ -48,4 +48,9 @@ tmpfs                              1.6G  8.0K  1.6G   1% /run/user/1000
 
 created password for samba user
 
+> sudo apt install -y ca-certificates curl gnupg
+Утилиты для скачивания официальных ключей шифрования
+
+sudo install -m 0755 -d /etc/apt/keyrings
+Создать папку (-d) и назначить ей права (-m)
 
