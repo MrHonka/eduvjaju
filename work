@@ -54,3 +54,8 @@ created password for samba user
 sudo install -m 0755 -d /etc/apt/keyrings
 Создать папку (-d) и назначить ей права (-m)
 
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+Скачать ключи шифрования
+
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+Задать права на файл
