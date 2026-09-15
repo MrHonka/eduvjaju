@@ -32,6 +32,12 @@ apt list --installed | grep 'smth'
 sudo apt update && sudo apt upgrade -y
 Проверить, какие обновления пакетов есть в репе и если успех (&&), установить их.
 
+sudo apt install --only-upgrade netplan.io thermald
+Установить конкретные пакеты если после upgrade apt list --upgradable показывает, что какие-то пакеты ещё остались удержанными
+
+sudo apt full-upgrade
+Обновить все пакеты
+
 sudo apt update && sudo apt install lm-sensors -y
 Продвинутые сенсоры
 
