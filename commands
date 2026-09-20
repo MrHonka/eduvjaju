@@ -117,4 +117,7 @@ sudo smbpasswd -a user
 sudo systemctl restart smbd
 Перезапустить службу Самбы
 
+git remote add origin https://github.com/MrHonka/roadmap-site.git
+Указать удалённый репозиторий своим источником
+
 
