@@ -121,3 +121,7 @@ git remote add origin https://github.com/MrHonka/roadmap-site.git
 Указать удалённый репозиторий своим источником
 
 
+git push -u origin master
+Запушить. Впервые -u (--set-upstream) связывает вашу локальную ветку с удаленной веткой на GitHub. 
+
+
