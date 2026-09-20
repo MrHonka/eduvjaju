@@ -129,6 +129,9 @@ git config --global user.name "MrHonka"
 git config --global user.email "твоя-почта@example.com"
 Указать почту
 
+git commit -m "some text"
+Подготовить коммит (хранится локально)
+
 git push -u origin master
 Запушить. Впервые -u (--set-upstream) связывает вашу локальную ветку с удаленной веткой на GitHub. 
 
