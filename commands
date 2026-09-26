@@ -77,7 +77,7 @@ sudo lsblk -o NAME,FSTYPE,SIZE,MOUNTPOINTS
 Посмотреть данные о дисках. -o - в красивом виде
 
 sudo ntfsresize --info /dev/sda2
-посмотреть данные об NTFS диске
+Посмотреть данные об NTFS диске
 
 sudo fdisk /dev/sda
 Интерактивный режим. n - создать новый volume, задать в мастере начало, конец и т.д., затем ...
