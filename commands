@@ -167,5 +167,7 @@ docker compose ps
 Посмотреть запущенные контейнеры. Берутся из docker-compose.yml
 
 docker images | grep <image-name>
-Посмотреть список шаблонов на диске
+Посмотреть список шаблонов на диске. В выводе так же видно короткий ID образа. Полный ID можно посмотреть командой
+
+docker image inspect roadmap-app --format '{{.Id}}'
 
