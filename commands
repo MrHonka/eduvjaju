@@ -136,3 +136,12 @@ git push -u origin master
 Запушить. Впервые -u (--set-upstream) связывает вашу локальную ветку с удаленной веткой на GitHub. 
 
 
+ssh
+У SSH-сервера на Kubena есть «отпечаток» — host key (/etc/ssh/ssh_host_*). Клиент запоминает связку ip -> отпечаток
+C:\Users\user\.ssh\known_hosts - тут лежат записи о хостах
+
+ps> ssh-keygen -F <новый-ip-kubena> - найти записи о хосте
+ps> ssh-keygen -R <старый-ip> - удалить старые записи
+
+> sudo ssh-keygen -l -f /etc/ssh/ssh_host_ed25519_key.pub - посомтреть на сервере отпечаток ключа, который ты видишь на клиенте
+
