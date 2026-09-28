@@ -171,3 +171,16 @@ docker images | grep <image-name>
 
 docker image inspect roadmap-app --format '{{.Id}}'
 
+docker compose stop
+Остановить контейнеры в папке выполнения команды.docker compose down — тоже останавливает, но еще и удаляет самиконтейнеры (образы, volumes и твой ./data при этом целы).
+Для «выключить сервер» хватит stop
+
+docker compose up -d
+Запустить контейнеры в папке выполнения команды
+
+Где лежат контейнеры? Два места:
+
+пока работают — процессы в памяти (как обычные программы);
+слои образов + volumes — на диске в /var/lib/docker (у тебя v29 — там же containerd-хранилище). Посмотреть: docker system df.
+в папке проекта лежит только исходники + ./data/roadmap.json (твои галочки) и именованный volume pgdata для Postgres (физически тоже в /var/lib/docker/volumes, не в ~/roadmap).
+
