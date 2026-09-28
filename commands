@@ -135,6 +135,18 @@ git commit -m "some text"
 git push -u origin master
 Запушить. Впервые -u (--set-upstream) связывает вашу локальную ветку с удаленной веткой на GitHub. 
 
+git clone https://github.com/MrHonka/roadmap-site.git ~/roadmap
+Склонировать репу впервые
+
+sudo dhclient -r && sudo dhclient
+Перезапустить dhcp-клиент
+
+ip -4 addr show
+Посмотреть IP-адрес
+
+hostname -I
+Посмотреть IP-адрес
+
 
 ssh
 У SSH-сервера на Kubena есть «отпечаток» — host key (/etc/ssh/ssh_host_*). Клиент запоминает связку ip -> отпечаток
@@ -143,5 +155,11 @@ C:\Users\user\.ssh\known_hosts - тут лежат записи о хостах
 ps> ssh-keygen -F <новый-ip-kubena> - найти записи о хосте
 ps> ssh-keygen -R <старый-ip> - удалить старые записи
 
-> sudo ssh-keygen -l -f /etc/ssh/ssh_host_ed25519_key.pub - посомтреть на сервере отпечаток ключа, который ты видишь на клиенте
+sudo ssh-keygen -l -f /etc/ssh/ssh_host_ed25519_key.pub - посомтреть на сервере отпечаток ключа, который ты видишь на клиенте
+
+docker compose up -d --build
+docker compose — оркестратор на одной машине: читает docker-compose.yml и поднимает связку целиком (app + db), а не по одному контейнеру руками через docker run.
+up — «приведи к состоянию из yml»: собери чего нет, создай сеть/volumes, запусти. Повторный up ничего не ломает — идемпотентность, как потом захочешь от Ansible.
+-d (detached) — запустить в фоне, терминал не виснет. Без него логи сыпались бы прямо в консоль. Смотреть их потом через docker compose logs -f.
+--build — перед стартом пересобрать образ app из твоего Dockerfile. Без флага compose использовал бы старый кэш-бинарник, и твой свежий push/pull бы не попал внутрь.
 
