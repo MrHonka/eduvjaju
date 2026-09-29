@@ -157,6 +157,9 @@ ps> ssh-keygen -R <старый-ip> - удалить старые записи
 
 sudo ssh-keygen -l -f /etc/ssh/ssh_host_ed25519_key.pub - посомтреть на сервере отпечаток ключа, который ты видишь на клиенте
 
+https://docs.docker.com/compose/ — как запускать (up/ps/logs/down)
+https://compose-spec.com/ — сам синтаксис yml (services/volumes/ports/healthcheck/depends_on)
+
 docker compose up -d --build
 docker compose — оркестратор на одной машине: читает docker-compose.yml и поднимает связку целиком (app + db), а не по одному контейнеру руками через docker run.
 up — «приведи к состоянию из yml»: собери чего нет, создай сеть/volumes, запусти. Повторный up ничего не ломает — идемпотентность, как потом захочешь от Ansible.
