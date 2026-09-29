@@ -175,7 +175,7 @@ docker images | grep <image-name>
 docker image inspect roadmap-app --format '{{.Id}}'
 
 docker compose stop
-Остановить контейнеры в папке выполнения команды.docker compose down — тоже останавливает, но еще и удаляет самиконтейнеры (образы, volumes и твой ./data при этом целы).
+Остановить контейнеры в папке выполнения команды.docker compose down — тоже останавливает, но еще и удаляет сами контейнеры (образы, volumes и твой ./data при этом целы).
 Для «выключить сервер» хватит stop
 
 docker compose up -d
