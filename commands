@@ -182,7 +182,7 @@ docker compose up -d
 
 пока работают — процессы в памяти (как обычные программы);
 слои образов + volumes — на диске в /var/lib/docker (у тебя v29 — там же containerd-хранилище). Посмотреть: docker system df.
-в папке проекта лежит только исходники + ./data/roadmap.json (твои галочки) и именованный volume pgdata для Postgres (физически тоже в /var/lib/docker/volumes, не в ~/roadmap).
+в папке проекта лежит только исходники + ./data/roadmap.json и именованный volume pgdata для Postgres (физически тоже в /var/lib/docker/volumes, не в ~/roadmap).
 
 docker history roadmap-app:latest
 Посмотреть историю сборки слоёв образа (строки в Dockerfile)
