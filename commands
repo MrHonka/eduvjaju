@@ -193,6 +193,9 @@ docker compose up -d
 docker history roadmap-app:latest
 Посмотреть историю сборки слоёв образа (строки в Dockerfile)
 
+docker compose logs --tail=30 app
+Посмотреть логи (app - это имя сервиса)
+
 docker system df
 Посмотреть, сколько занимают слои образов + volumes — на диске в /var/lib/docker
 
