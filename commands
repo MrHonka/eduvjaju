@@ -173,6 +173,13 @@ docker images | grep <image-name>
 Посмотреть список шаблонов на диске. В выводе так же видно короткий ID образа. Полный ID можно посмотреть командой
 
 docker image inspect roadmap-app --format '{{.Id}}'
+Покажи инфо по IMAGE roadmap-app
+
+docker volume inspect roadmap_pgdata --format '{{.Id}}'
+Покажи инфо по VOLUME (named volume pgdata: в docker-compose.yml). Сейчас я уже переключился в дефолта на базу в /mnt/k8s-volume
+
+docker inspect roadmap-db-1 --format '{{.Mounts}}'
+Покажи инфо о том, что смонтировал контейнер
 
 docker compose stop
 Остановить контейнеры в папке выполнения команды. docker compose down — тоже останавливает, но еще и удаляет сами контейнеры (образы, volumes и твой ./data при этом целы).
