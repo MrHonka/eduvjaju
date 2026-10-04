@@ -175,7 +175,7 @@ docker images | grep <image-name>
 docker image inspect roadmap-app --format '{{.Id}}'
 Покажи инфо по IMAGE roadmap-app
 
-docker volume inspect roadmap_pgdata --format '{{.Id}}'
+docker volume inspect roadmap_pgdata --format '{{.Mountpoint}}'
 Покажи инфо по VOLUME (named volume pgdata: в docker-compose.yml). Сейчас я уже переключился в дефолта на базу в /mnt/k8s-volume
 
 docker inspect roadmap-db-1 --format '{{.Mounts}}'
