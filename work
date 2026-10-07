@@ -83,4 +83,7 @@ https://download.docker.com/linux/ubuntu - а это по какому-то де
 
 > sudo chown -R 70:70 /mnt/k8s-storage/pgdata - chown -R рекурсивно к папке юзер:группа. 70:70 - это uid юзера postgres
 
-docker pull hadolint/hadolint - спулить latest образ линтера с docker.io
+> docker pull hadolint/hadolint - спулить latest образ линтера с docker.io
+
+> docker run -rm -i hadolint/hadolint < Dockerfile - создай контейнер из образа и запусти (Это build + start в одном слове, но только на один запуск (в отличие от compose up,
+который помнит связку в yml)). --rm - удали контейнер после завершения, -i - открыть stdin, чтобы сработала shell-команда < Dockerfile
