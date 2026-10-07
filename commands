@@ -217,7 +217,9 @@ docker compose exec db psql -U roadmap -d roadmap -c 'select 1;'
 
 вывод hadolint
  DL3008 warning: Pin versions in apt get install. Instead of `apt-get install <package>` use `apt-get install <package>=<version>` - точно указывать версию компилятора.
+ DL3025 warning: Use arguments JSON notation for CMD and ENTRYPOINT arguments - это если линтер найдёт команды типа "CMD curl ...",
 
-docker run --rm debian:bookworm-slim sh -c "apt-get update -qq && apt-cache policy g++ cmake make ca-certificates curl" | grep -E "^[a-z-]+:|Candidate" - получить версии программ в контейнере, а не на самой мастер-системе
+docker run --rm debian:bookworm-slim sh -c "apt-get update -qq && apt-cache policy g++ cmake make ca-certificates curl" | grep -E "^[a-z-]+:|Candidate" - получить
+версии программ в контейнере, а не на самой мастер-системе
 
 docker build -t roadmap-app:test . - сбилдить. -t с меткой (:test). точка в конце - "эта папка", так же учитывается .gitignore
