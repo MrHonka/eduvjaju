@@ -76,7 +76,11 @@ https://download.docker.com/linux/ubuntu - а это по какому-то де
 Утилита для изменения настроек текущего юзера. -aG - добавить(Append) в группу(G) docker того, кто вернётся из $USER. Юзеры этой группы могут управлять докером.
 Так как Демон Docker (dockerd) работает с наивысшими правами root. Управление им происходит через специальный файл-сокет /var/run/docker.sock
 
-sudo mkdir -p /mnt/k8s-storage/pgdata - создать папку
-sudo cp -a "$(docker volume inspect roadmap_pgdata --format '{{.Mountpoint}}')/." /mnt/k8s-storage/pgdata/ - -a скопировать права. /. после переменной указывает,
+> sudo mkdir -p /mnt/k8s-storage/pgdata - создать папку
+
+> sudo cp -a "$(docker volume inspect roadmap_pgdata --format '{{.Mountpoint}}')/." /mnt/k8s-storage/pgdata/ - -a скопировать права. /. после переменной указывает,
 что скопировать надо содержимоей по этому пути, а не весь путь
-sudo chown -R 70:70 /mnt/k8s-storage/pgdata - chown -R рекурсивно к папке юзер:группа. 70:70 - это uid юзера postgres
+
+> sudo chown -R 70:70 /mnt/k8s-storage/pgdata - chown -R рекурсивно к папке юзер:группа. 70:70 - это uid юзера postgres
+
+docker pull hadolint/hadolint - спулить latest образ линтера с docker.io
