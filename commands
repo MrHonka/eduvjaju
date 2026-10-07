@@ -215,3 +215,9 @@ docker compose exec db df -h /var/lib/postgresql/data
 docker compose exec db psql -U roadmap -d roadmap -c 'select 1;'
 Проверить наличие базы sql-запросом
 
+вывод hadolint
+ DL3008 warning: Pin versions in apt get install. Instead of `apt-get install <package>` use `apt-get install <package>=<version>` - точно указывать версию компилятора.
+
+docker run --rm debian:bookworm-slim sh -c "apt-get update -qq && apt-cache policy g++ cmake make ca-certificates curl" | grep -E "^[a-z-]+:|Candidate" - получить версии программ в контейнере, а не на самой мастер-системе
+
+docker build -t roadmap-app:test . - сбилдить. -t с меткой (:test). точка в конце - "эта папка", так же учитывается .gitignore
