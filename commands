@@ -215,9 +215,13 @@ docker compose exec db df -h /var/lib/postgresql/data
 docker compose exec db psql -U roadmap -d roadmap -c 'select 1;'
 Проверить наличие базы sql-запросом
 
+docker run -rm -i hadolint/hadolint < Dockerfile - создай контейнер из образа и запусти (Это build + start в одном слове, но только на один запуск (в отличие от compose up,
+который помнит связку в yml)). --rm - удали контейнер после завершения, -i - открыть stdin, чтобы сработала shell-команда < Dockerfile
+
 вывод hadolint
- DL3008 warning: Pin versions in apt get install. Instead of `apt-get install <package>` use `apt-get install <package>=<version>` - точно указывать версию компилятора.
- DL3025 warning: Use arguments JSON notation for CMD and ENTRYPOINT arguments - это если линтер найдёт команды типа "CMD curl ...",
+  DL3008 warning: Pin versions in apt get install. Instead of `apt-get install <package>` use `apt-get install <package>=<version>` - точно указывать версию компилятора.
+  DL3025 warning: Use arguments JSON notation for CMD and ENTRYPOINT arguments - это если линтер найдёт команды типа "CMD curl ...", таким образом docker оборачивает
+команду в /bin/sh -с, она получает PID 1 вместо нашего приложения, что может вызывать пробелмы с docker stop (SIGTERM). Надо использовать нотацию вида "CMD ["curl", ...]"
 
 docker run --rm debian:bookworm-slim sh -c "apt-get update -qq && apt-cache policy g++ cmake make ca-certificates curl" | grep -E "^[a-z-]+:|Candidate" - получить
 версии программ в контейнере, а не на самой мастер-системе
