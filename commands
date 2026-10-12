@@ -227,3 +227,7 @@ docker run --rm debian:bookworm-slim sh -c "apt-get update -qq && apt-cache poli
 версии программ в контейнере, а не на самой мастер-системе
 
 docker build -t roadmap-app:test . - сбилдить. -t с меткой (:test). точка в конце - "эта папка", так же учитывается .gitignore
+
+trivy
+docker run --rm -v /var/run/docker.sock:/var/run/docker.sock aquasec/trivy image roadmap-app:latest > /mnt/win-data/share/trivy.txt 2>&1
+Выполнить проверку образа
