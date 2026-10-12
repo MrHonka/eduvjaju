@@ -129,6 +129,13 @@ git config --global user.name "MrHonka"
 git config --global user.email "твоя-почта@example.com"
 Указать почту
 
+git config user.email
+Посмотреть указанную почту
+
+git config --global credential.helper store
+Выполнить ДО git push, когда добавляешь ключ на машину. потом уже push, гит попросит юзернейм, потом пароль. в качестве пароля вставляешь Access token, 
+который сделал в гите. Если всё ок, то пара логин//токен запишется в ~/.git-credentials
+
 git commit -m "some text"
 Подготовить коммит (хранится локально)
 
