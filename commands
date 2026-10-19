@@ -223,6 +223,9 @@ Postgresql
 docker compose exec db psql -U roadmap -d roadmap -c 'select 1;'
 Проверить наличие базы sql-запросом. -U юзер, -d имя бд. 
 
+\q
+Выйти
+
 \dt
 Получить список таблиц в текущей схеме. Все таблицы, включая системные \dt *.*
 
