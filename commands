@@ -223,6 +223,9 @@ Postgresql
 docker compose exec db psql -U roadmap -d roadmap -c 'select 1;'
 Проверить наличие базы sql-запросом. -U юзер, -d имя бд. 
 
+\dt
+Получить список таблиц в текущей схеме. Все таблицы, включая системные \dt *.*
+
 docker run -rm -i hadolint/hadolint < Dockerfile - создай контейнер из образа и запусти (Это build + start в одном слове, но только на один запуск (в отличие от compose up,
 который помнит связку в yml)). --rm - удали контейнер после завершения, -i - открыть stdin, чтобы сработала shell-команда < Dockerfile
 
