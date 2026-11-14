@@ -90,8 +90,9 @@ https://download.docker.com/linux/ubuntu - а это по какому-то де
 
 > sudo apt install -y software-properties-common - Это набор служебных утилит Ubuntu для управления сторонними репозиториями (PPA — Personal Package Archive)
 
-> sudo apt-add-repository --yes --update ppa:ansible/ansible - добавил репу ансибла
-> sudo apt install -y ansible - устанвоил ансибл
+> sudo apt-add-repository --yes --update ppa:ansible/ansible - добавил репу ансибла. (сработало с третьего раза почему-то. соединение устанавливалось, что-то скачивалось,
+но потом коннект обрывался)
+> sudo apt install -y ansible - установил ансибл
 
 > echo "net.ipv6.conf.all.disable_ipv6=1" | sudo tee -a /etc/sysctl.conf - отключить IPv6s
 > echo "net.ipv6.conf.default.disable_ipv6=1" | sudo tee -a /etc/sysctl.conf
