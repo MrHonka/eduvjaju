@@ -89,3 +89,5 @@ https://download.docker.com/linux/ubuntu - а это по какому-то де
 который помнит связку в yml)). --rm - удали контейнер после завершения, -i - открыть stdin, чтобы сработала shell-команда < Dockerfile
 
 > sudo apt install -y software-properties-common - Это набор служебных утилит Ubuntu для управления сторонними репозиториями (PPA — Personal Package Archive)
+
+> sudo apt-add-repository --yes --update ppa:ansible/ansible - добавил репу ансибла
